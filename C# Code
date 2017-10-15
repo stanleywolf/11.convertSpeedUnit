@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _11.convertSpeedUnits
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int distanceInMeters = int.Parse(Console.ReadLine());
+            int hours = int.Parse(Console.ReadLine());
+            int minutes = int.Parse(Console.ReadLine());
+            int seconds = int.Parse(Console.ReadLine());
+            float allSecond = seconds + (minutes * 60.0f) + (hours * 60 * 60.0f);
+            float metersPerSecond = distanceInMeters / allSecond;
+            Console.WriteLine(metersPerSecond);
+            float km = distanceInMeters / 1000.0f;
+            float allTime = hours + (minutes/60.0f) + (seconds / 60.0f/60.0f);
+            float kmPerHour = km / allTime;
+            Console.WriteLine(kmPerHour);
+            float milePerHour = (float)distanceInMeters / 1609f / (float)allTime;
+            
+           Console.WriteLine(milePerHour);
+        }
+    }
+}
